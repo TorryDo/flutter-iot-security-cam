@@ -1,10 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iot_security_cam/ui/screen/home/components/rounded_icon_button.dart';
-import 'package:flutter_iot_security_cam/ui/screen/home/components/switch_card.dart';
-import 'package:flutter_iot_security_cam/ui/screen/home/home_provider.dart';
 import 'package:flutter_iot_security_cam/utils/lib/provider/provider_ext.dart';
+
+import '../home_provider.dart';
+import 'rounded_icon_button.dart';
+import 'switch_card.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

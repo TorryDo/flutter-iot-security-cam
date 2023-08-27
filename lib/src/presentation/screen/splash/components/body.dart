@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iot_security_cam/config/size_config.dart';
-import 'package:flutter_iot_security_cam/ui/screen/login/login_screen.dart';
-
+import 'package:flutter_iot_security_cam/di/locator.dart';
+import 'package:flutter_iot_security_cam/src/domain/auth/repository/auth_repository.dart';
+import 'package:flutter_iot_security_cam/src/presentation/screen/home/home_screen.dart';
+import 'package:flutter_iot_security_cam/src/presentation/screen/login/login_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -40,7 +42,7 @@ class Body extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
+              navigate(context);
             },
             style: ElevatedButton.styleFrom(
               elevation: 0,
@@ -60,5 +62,17 @@ class Body extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void navigate(BuildContext context) {
+    final AuthRepository authRepository = locator();
+
+    authRepository.getCurrentUserAccount().then((value) {
+      if (value == null) {
+        Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
+      } else {
+        Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+      }
+    });
   }
 }

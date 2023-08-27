@@ -1,6 +1,5 @@
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iot_security_cam/ui/screen/home/home_provider.dart';
 import 'package:flutter_iot_security_cam/utils/lib/provider/provider_ext.dart';
 import 'package:flutter_iot_security_cam/utils/slider_utils.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,6 +8,7 @@ import 'package:rainbow_color/rainbow_color.dart';
 import 'components/body.dart';
 import 'components/options_enum.dart';
 import 'components/widgets/slider_widget.dart';
+import 'home_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = '/home-screen';

@@ -1,10 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iot_security_cam/di/locator.dart';
 import 'package:flutter_iot_security_cam/routes.dart';
-import 'package:flutter_iot_security_cam/ui/screen/home/home_provider.dart';
-import 'package:flutter_iot_security_cam/ui/screen/splash/splash_screen.dart';
+import 'package:flutter_iot_security_cam/src/presentation/screen/login/login_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+import 'firebase_options.dart';
+import 'src/presentation/screen/home/home_provider.dart';
+import 'src/presentation/screen/splash/splash_screen.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await setupLocator();
+
   runApp(const MyApp());
 }
 
@@ -17,7 +30,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (c) => HomeProvider()),
+          ChangeNotifierProvider(
+            create: (c) => HomeProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (c) => LoginProvider(
+              authRepository: locator(),
+            ),
+          ),
         ],
         child: MaterialApp(
           title: 'Secure Camera',

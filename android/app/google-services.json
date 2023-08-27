@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "981635193509",
+    "firebase_url": "https://iot-security-cam-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "iot-security-cam",
+    "storage_bucket": "iot-security-cam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981635193509:android:ca0fb15a078cac07868b4c",
+        "android_client_info": {
+          "package_name": "com.torrydo.flutter_iot_security_cam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981635193509-h6oq66r3rsa7feoucreqomu59v1pejte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdjbK_GRSajtkehq5qYuJWDuGadp7xebs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981635193509-h6oq66r3rsa7feoucreqomu59v1pejte.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,9 @@
 // Routes arranged in ascending order
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_iot_security_cam/ui/screen/home/home_screen.dart';
-import 'package:flutter_iot_security_cam/ui/screen/login/login_screen.dart';
-import 'package:flutter_iot_security_cam/ui/screen/splash/splash_screen.dart';
+import 'package:flutter_iot_security_cam/src/presentation/screen/home/home_screen.dart';
+import 'package:flutter_iot_security_cam/src/presentation/screen/login/login_screen.dart';
+import 'package:flutter_iot_security_cam/src/presentation/screen/splash/splash_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   // EditProfile.routeName: (context) => const EditProfile(),
